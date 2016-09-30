@@ -3,13 +3,13 @@
 	<head>
 		<title>CSS Accessibility API Mappings</title>
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		<script src="../common/script/jquery-1.9.0.min.js"></script>
+		<script src="../aria/common/script/jquery-1.9.0.min.js"></script>
 		<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
-		<script src="../common/script/resolveReferences.js" class="remove"></script>
-		<script src="../common/biblio.js" class="remove"></script>
+		<script src="../aria/common/script/resolveReferences.js" class="remove"></script>
+		<script src="../aria/common/biblio.js" class="remove"></script>
 		
-		<link href="../common/css/mapping-tables.css" rel="stylesheet" type="text/css" />
-		<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+		<link href="../aria/common/css/mapping-tables.css" rel="stylesheet" type="text/css" />
+		<link href="../aria/common/css/common.css" rel="stylesheet" type="text/css" />
 		<!--<link href="css/dpub-aam.css" rel="stylesheet" type="text/css"/>-->
 		<script class="remove">
   var respecConfig = {
@@ -37,7 +37,7 @@
     //previousDiffURI:      "http://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/",
 
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI:           "http://w3c.github.io/aria/css-aam/css-aam.html",
+    edDraftURI:           "http://w3c.github.io/css-aam/",
 
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
@@ -69,16 +69,16 @@
     */
     
     // Working group info
-    wg:           "Accessible Rich Internet Applications Working Group",
-    wgURI:        "http://www.w3.org/WAI/ARIA/",
-    wgPublicList: "public-aria-comments",
+    wg:           ["Accessible Rich Internet Applications Working Group", "Accessible Platform Architectures Working Group", "CSS Working Group"],
+    wgURI:        ["https://www.w3.org/WAI/ARIA/", "https://www.w3.org/WAI/APA/", "https://www.w3.org/Style/CSS/"],
+    wgPublicList: "public-css-a11y",
 
     // URI of the patent status for this WG, for Rec-track documents
     // !!!! IMPORTANT !!!!
     // This is important for Rec-track documents, do not copy a patent URI from a random
     // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
     // Team Contact.
-    wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/83726/status",
+    wgPatentURI:  ["http://www.w3.org/2004/01/pp-impl/83726/status", "https://www.w3.org/2004/01/pp-impl/83907/status", "https://www.w3.org/2004/01/pp-impl/32061/status"],
     
     tocIntroductory: true,
     //maxTocLevel: 4,
@@ -114,8 +114,8 @@
     preProcess: [ linkCrossReferences ] 
   }
 </script>
-		<script src="../common/script/jquery.details.min.js"></script>
-		<script src="../common/script/mapping-tables.js"></script>
+		<script src="../aria/common/script/jquery.details.min.js"></script>
+		<script src="../aria/common/script/mapping-tables.js"></script>
 		<script type="text/javascript">
 
 var mappingTableLabels = {
@@ -168,7 +168,7 @@ var mappingTableLabels = {
 		</section>
 		<section id="glossary">
 			<h2>Important Terms</h2>
-			<div data-include="../common/terms.html" data-oninclude="restrictReferences">Placeholder for glossary</div>
+			<div data-include="../aria/common/terms.html" data-oninclude="restrictReferences">Placeholder for glossary</div>
 		</section>
 		<section class="section" id="keyboard-focus">
 			<h2>Supporting Keyboard Navigation</h2>
@@ -225,9 +225,13 @@ var mappingTableLabels = {
         		<section class="appendix" id="changelog">
                 		<h2>Change Log</h2>
                 	</section>
-			<section class="appendix informative section" id="acknowledgements" data-include="../common/acknowledgements.html" data-include-replace="true">
+			<section class="appendix informative section" id="acknowledgements">
 				<h3>Acknowledgments</h3>
 				<p>The following people contributed to the development of this document.</p>
+				<section id="ack_participants">
+					<h4>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</h4>
+					<p>TBD</p>
+				</section>
 				<section class="section" id="ack_funders">
 					<h4>Enabling funders</h4>
 					<p>This publication has been funded in part with Federal funds from the U.S. Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number ED-OSE-10-C-0067. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
