@@ -22,6 +22,10 @@ script:
   - git clone --depth=1 --branch=gh-pages https://github.com/w3c/css-aam.git
   - cd css-aam
   - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://rawgit.com/w3c/css-aam/master/index.html -o index.html -f
+  - cp -R ../../w3c/css-aam/common/css/mapping-tables.css common/css/mapping-tables.css
+  - cp -R ../../w3c/css-aam/common/css/common.css common/css/common.css
+  - cp -R ../../w3c/css-aam/common/script/jquery.details.min.js common/script/jquery.details.min.js
+  - cp -R ../../w3c/css-aam/common/script/mapping-tables.min.js common/script/mapping-tables.min.js
 
 after_success:
   - git add -A .
