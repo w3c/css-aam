@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.0.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -89,36 +89,7 @@ input.task-list-item-checkbox {
 		
 		<script src="https://www.w3.org/scripts/jquery/1.11/jquery.min.js"></script>
 		
-		
-		
-		
-		<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
-		<link href="common/css/common.css" rel="stylesheet" type="text/css">
-		<!--<link href="css/dpub-aam.css" rel="stylesheet" type="text/css"/>-->
-		
-		<script src="common/script/jquery.details.min.js"></script>
-		<script src="common/script/mapping-tables.js"></script>
-		<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-	<style id="respec-mainstyle">/*****************************************************************
+		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -391,12 +362,42 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/css-aam-1.0/"><script id="initialUserConfig" type="application/json">{
+</style>
+		
+		
+		<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
+		<link href="common/css/common.css" rel="stylesheet" type="text/css">
+		<!--<link href="css/dpub-aam.css" rel="stylesheet" type="text/css"/>-->
+		
+		<script src="common/script/jquery.details.min.js"></script>
+		<script src="common/script/mapping-tables.js"></script>
+		<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/css-aam-1.0/"><script id="initialUserConfig" type="application/json">{
   "includePermalinks": true,
   "specStatus": "ED",
   "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
   "shortName": "css-aam-1.0",
   "copyrightStart": "2016",
+  "license": "document",
   "edDraftURI": "http://w3c.github.io/css-aam/",
   "editors": [
     {
@@ -710,17 +711,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "preProcess": [
     null
   ],
-  "publishDate": "2018-01-11",
-  "publishISODate": "2018-01-11T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 11 January 2018"
+  "publishDate": "2018-02-02",
+  "publishISODate": "2018-02-02T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 02 February 2018"
 }</script></head>
 	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: -292779941;--></p>
+  <p><!--_hyper: -392949517;--></p>
   <h1 class="title p-name" id="title">CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings</h1>
-  <h2 id="w3c-editor-s-draft-11-january-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-01-11">11 January 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 11 January 2018" title="Permalink for W3C Editor's Draft 11 January 2018"><span>§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-02-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-02">02 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 02 February 2018" title="Permalink for W3C Editor's Draft 02 February 2018"><span>§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="http://w3c.github.io/css-aam/">http://w3c.github.io/css-aam/</a></dd>
@@ -742,7 +743,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
         <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-            <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a>
+            <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
         rules apply.
       </p>
   <hr title="Separator for header">
