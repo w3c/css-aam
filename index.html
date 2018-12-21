@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.0.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -32,6 +32,10 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
     border-color: #e05252;
     background: #fbe9e9;
 }
+.issue.closed span.issue-number {
+    text-decoration: line-through;
+}
+
 .note, .ednote {
     border-color: #52e052;
     background: #e9fbe9;
@@ -62,27 +66,27 @@ input.task-list-item-checkbox {
     margin: 0 0.35em 0.25em -1.6em;
     vertical-align: middle;
 }
-</style><style>/* --- PERMALINKS --- */
 
-.permalink {
-  width: 1px;
-  height: 1px;
-  overflow: visible;
-  font-size: 10pt;
-  font-style: normal;
-  vertical-align: middle;
-  margin-left: 4px;
-}
-
-.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
-  background:transparent !important;
-  text-decoration:none;
+.issue a.respec-gh-label {
+  padding: 5px;
+  margin: 0 2px 0 2px;
+  font-size: 10px;
+  text-transform: none;
+  text-decoration: none;
   font-weight: bold;
-  color:#666 !important;
+  border-radius: 4px;
+  position: relative;
+  bottom: 2px;
 }
 
-.permalink abbr {
-  border:0;
+.issue a.respec-label-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.issue a.respec-label-light {
+  color: #000;
+  background-color: #fff;
 }
 </style>
 		<title>CSS Accessibility API Mappings</title>
@@ -128,6 +132,10 @@ a.externalDFN {
 
 a.bibref {
   text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
 }
 
 cite .bibref {
@@ -196,11 +204,11 @@ table.simple {
 
 /* --- DL --- */
 
-.section dd > p:first-child {
+.section dd>p:first-child {
   margin-top: 0;
 }
 
-.section dd > p:last-child {
+.section dd>p:last-child {
   margin-bottom: 0;
 }
 
@@ -213,7 +221,7 @@ table.simple {
   margin-bottom: 0;
 }
 
-#issue-summary > ul,
+#issue-summary>ul,
 .respec-dfn-list {
   column-count: 2;
 }
@@ -229,7 +237,7 @@ details.respec-tests-details {
   vertical-align: top;
 }
 
-details.respec-tests-details > * {
+details.respec-tests-details>* {
   padding-right: 2em;
 }
 
@@ -237,130 +245,93 @@ details.respec-tests-details[open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
-  border-radius: .3em;
+  border-radius: 0.3em;
   background-color: white;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details[open]>summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
   line-height: 2em;
 }
 
-details.respec-tests-details > ul {
+details.respec-tests-details>ul {
   width: 100%;
   margin-top: -0.3em;
 }
 
-details.respec-tests-details > li {
+details.respec-tests-details>li {
   padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
 }
 
 @media print {
   .removeOnSave {
     display: none;
   }
-}
-</style><style>/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
 }
 </style>
 		
@@ -484,12 +455,14 @@ var mappingTableLabels = {
     "ATK": {
       "href": "https://developer.gnome.org/atk/stable/",
       "title": "ATK - Accessibility Toolkit",
-      "publisher": "The GNOME Project"
+      "publisher": "The GNOME Project",
+      "id": "atk"
     },
     "AXAPI": {
       "href": "https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078",
       "title": "Accessibility Programming Guide for OS X",
-      "publisher": "Apple Corporation"
+      "publisher": "Apple Corporation",
+      "id": "axapi"
     },
     "CORE-AAM": {
       "title": "Core Accessibility API Mappings 1.1",
@@ -505,7 +478,8 @@ var mappingTableLabels = {
       "etAl": true,
       "deliveredBy": [
         "http://www.w3.org/WAI/ARIA/"
-      ]
+      ],
+      "id": "core-aam"
     },
     "DPUB-ARIA": {
       "title": "Digital Publishing WAI-ARIA Module 1.0",
@@ -591,7 +565,8 @@ var mappingTableLabels = {
     "MSAA": {
       "href": "https://msdn.microsoft.com/en-us/library/ms697707.aspx",
       "title": "Microsoft Active Accessibility (MSAA) 2.0",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "msaa"
     },
     "SVG-AAM": {
       "title": "SVG2 Accessibility API Mappings 1.0",
@@ -671,12 +646,14 @@ var mappingTableLabels = {
     "UI-AUTOMATION": {
       "href": "https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx",
       "title": "UI Automation",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "ui-automation"
     },
     "UIA-EXPRESS": {
       "href": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx",
       "title": "The IAccessibleEx Interface",
-      "publisher": "Microsoft Corporation"
+      "publisher": "Microsoft Corporation",
+      "id": "uia-express"
     },
     "WAI-ARIA": {
       "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.1",
@@ -711,44 +688,63 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-02-02",
-  "publishISODate": "2018-02-02T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 02 February 2018"
-}</script></head>
-	<body aria-busy="false" class="h-entry toc-inline"><div class="head">
-    <p>
-      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
-    </p>
-  <p><!--_hyper: -392949517;--></p>
-  <h1 class="title p-name" id="title">CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings</h1>
-  <h2 id="w3c-editor-s-draft-02-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-02">02 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 02 February 2018" title="Permalink for W3C Editor's Draft 02 February 2018"><span>§</span></a></span></h2>
-  <dl>
-      <dt>This version:</dt>
-      <dd><a class="u-url" href="http://w3c.github.io/css-aam/">http://w3c.github.io/css-aam/</a></dd>
-      <dt>Latest published version:</dt>
-      <dd><a href="https://www.w3.org/TR/css-aam-1.0/">https://www.w3.org/TR/css-aam-1.0/</a></dd>
-      <dt>Latest editor's draft:</dt>
-      <dd><a href="http://w3c.github.io/css-aam/">http://w3c.github.io/css-aam/</a></dd>
-    <dt>Editor:</dt>
-    <dd class="p-author h-card vcard"><span class="p-name fn">To Be Determined</span></dd>
-
-  </dl>
-      <p class="copyright">
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
-        2016-2018
+  "publishDate": "2018-12-21",
+  "publishISODate": "2018-12-21T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 21 December 2018"
+}</script><meta name="description" content="The CSS Accessibility API Mappings (CSS-AAM) defines how
+    user agents map
+    the Cascading Stylesheets [css-2015] features
+    to platform accessibility APIs.
+    It is intended for user agent developers
+    responsible for accessibility in their user agent so that they can support the accessibility of content that uses CSS."></head>
+	<body class="h-entry toc-inline"><div class="head">
+      <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings</h1>
+      
+      <h2>
+        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
+        <time class="dt-published" datetime="2018-12-21">21 December 2018</time>
+      </h2>
+      <dl>
+        <dt>This version:</dt><dd>
+                  <a class="u-url" href="http://w3c.github.io/css-aam/">http://w3c.github.io/css-aam/</a>
+                </dd><dt>Latest published version:</dt><dd>
+                  <a href="https://www.w3.org/TR/css-aam-1.0/">https://www.w3.org/TR/css-aam-1.0/</a>
+                </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="http://w3c.github.io/css-aam/">http://w3c.github.io/css-aam/</a></dd>
         
-        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
-        (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
-        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-            <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-        rules apply.
-      </p>
-  <hr title="Separator for header">
-</div>
-		<section id="abstract" class="introductory"><!--OddPage--><h2 id="abstract-0">Abstract</h2>
+        
+        
+        
+        
+        
+        <dt>Editor:</dt>
+        <dd class="p-author h-card vcard"><span class="p-name fn">To Be Determined</span></dd>
+        
+        
+        
+      </dl>
+      
+      
+      
+      <p class="copyright">
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+                        ©
+                        2016-2018
+                        
+                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+                        
+                        <abbr title="World Wide Web Consortium">W3C</abbr>
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+                        and
+                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+                        rules apply.
+                      </p>
+      <hr title="Separator for header">
+    </div>
+		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
   <p>
     The CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings (CSS-AAM) defines how
     <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> map
@@ -764,72 +760,81 @@ var mappingTableLabels = {
   </p>
 
 		</section>
-		<section id="sotd" class="introductory"><!--OddPage--><h2 id="status-of-this-document">Status of This Document</h2>
-      <p>
-        <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
-      </p>
-        
+		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
 			<p>This is a stub document intended to collect features where CSS accessibility can be enhanced by providing user agent accessibility guidance.</p>
-		
-        <p>
-          This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a>, the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a>, and the <a href="https://www.w3.org/Style/CSS/">CSS Working Group</a> as an Editor's Draft.
-            Comments regarding this document are welcome. Please send them to
-            <a href="mailto:public-css-a11y@w3.org">public-css-a11y@w3.org</a>
-            (<a href="mailto:public-css-a11y-request@w3.org?subject=subscribe">subscribe</a>,
-            <a href="https://lists.w3.org/Archives/Public/public-css-a11y/">archives</a>).
-        </p>
-          <p>
-            Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
-            Membership. This is a draft document and may be updated, replaced or obsoleted by other
-            documents at any time. It is inappropriate to cite this document as other than work in
-            progress.
-          </p>
-        <p>
-            This document was produced by
-            groups
- operating under the
-            <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a>, a <a href="https://www.w3.org/2004/01/pp-impl/83907/status" rel="disclosure">public list of any patent disclosures  (Accessible Platform Architectures Working Group)</a>, and a <a href="https://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures  (CSS Working Group)</a>
-            made in connection with the deliverables of
-            each group; these pages also include
-            instructions for disclosing a patent. An individual who has actual knowledge of a patent
-            which the individual believes contains
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential
-            Claim(s)</a> must disclose the information in accordance with
-            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
-            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        </p>
-          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-          </p>
-        
-
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents"><span>§</span></a></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#intro" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#keyboard-focus" class="tocxref"><span class="secno">4. </span>Supporting Keyboard Navigation</a></li><li class="tocline"><a href="#mapping" class="tocxref"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#mapping_general" class="tocxref"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li></ol></li><li class="tocline"><a href="#mapping_conflicts" class="tocxref"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a href="#mapping_nodirect" class="tocxref"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a href="#mapping_role" class="tocxref"><span class="secno">8. </span>Role mapping</a><ol class="toc"><li class="tocline"><a href="#roleMappingGeneralRules" class="tocxref"><span class="secno">8.1 </span>General Rules</a></li><li class="tocline"><a href="#mapping_role_table" class="tocxref"><span class="secno">8.2 </span>Feature Mapping Table</a></li></ol></li><li class="tocline"><a href="#mapping_additional" class="tocxref"><span class="secno">9. </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_nd" class="tocxref"><span class="secno">9.1 </span>Generated Content</a></li></ol></li><li class="tocline"><a href="#mapping_actions" class="tocxref"><span class="secno">10. </span>Actions</a></li><li class="tocline"><a href="#mapping_events" class="tocxref"><span class="secno">11. </span>Events</a></li><li class="tocline"><a href="#document-handling" class="tocxref"><span class="secno">12. </span>Special Document Handling Procedures</a></li><li class="tocline"><a href="#appendices" class="tocxref"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A.1 </span>Change Log</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A.2 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_participants" class="tocxref"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.2.2 </span>Enabling funders</a></li></ol></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ol></li></ol></nav>
+		<p>
+                                              This document was published by
+                                              the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a>, the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a>, and the <a href="https://www.w3.org/Style/CSS/">CSS Working Group</a> as an
+                                              Editor's Draft.
+                                              
+                                            </p><p>
+                                                      
+                                                      Comments regarding this document are welcome.
+                                                              Please send them
+                                                              to
+                                                              <a href="mailto:public-css-a11y@w3.org">public-css-a11y@w3.org</a>
+                                                              (<a href="https://lists.w3.org/Archives/Public/public-css-a11y/">archives</a>).
+                                                            
+                                                    </p><p>
+                                              Publication as an
+                                              Editor's Draft does not imply
+                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                                              This is a draft document and may
+                                              be updated, replaced or obsoleted
+                                              by other documents at any time. It
+                                              is inappropriate to cite this
+                                              document as other than work in
+                                              progress.
+                                            </p><p>
+                                      
+                                              This document was produced by
+                                              groups
+                                              operating under the
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                                            
+                                      
+                                      
+                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains
+                                                      a <a href="http://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a>, a <a href="https://www.w3.org/2004/01/pp-impl/83907/status" rel="disclosure">public list of any patent disclosures  (Accessible Platform Architectures Working Group)</a>, and a <a href="https://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures  (CSS Working Group)</a>
+                                              made in connection with the
+                                              deliverables of
+                                              each group; these pages also include
+                                              instructions for disclosing a
+                                              patent. An individual who has
+                                              actual knowledge of a patent which
+                                              the individual believes contains
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                                              must disclose the information in
+                                              accordance with
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+                                                Policy</a>.
+                                            
+                                      
+                                    </p><p>
+                                      This document is governed by the
+                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#glossary"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#keyboard-focus"><span class="secno">4. </span>Supporting Keyboard Navigation</a></li><li class="tocline"><a class="tocxref" href="#mapping"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><span class="secno">8. </span>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><span class="secno">8.1 </span>General Rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><span class="secno">8.2 </span>Feature Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><span class="secno">9. </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><span class="secno">9.1 </span>Generated Content</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><span class="secno">10. </span>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><span class="secno">11. </span>Events</a></li><li class="tocline"><a class="tocxref" href="#document-handling"><span class="secno">12. </span>Special Document Handling Procedures</a></li><li class="tocline"><a class="tocxref" href="#appendices"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A.1 </span>Change Log</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A.2 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_participants"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.2.2 </span>Enabling funders</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">B.1 </span>Normative references</a></li></ol></li></ol></nav>
 		<section id="intro" class="informative">
-			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction&nbsp;<span class="permalink"><a href="#intro" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
+			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#intro"></a></h2><p><em>This section is non-normative.</em></p>
 		</section>
-		<section id="conformance" class="normative"><!--OddPage--><h2 id="x2-conformance"><span class="secno">2. </span>Conformance&nbsp;<span class="permalink"><a href="#conformance" aria-label="Permalink for 2. Conformance" title="Permalink for 2. Conformance"><span>§</span></a></span></h2>
-<p>
-  As well as sections marked as non-normative, all authoring guidelines, diagrams, examples,
-  and notes in this specification are non-normative. Everything else in this specification is
-  normative.
-</p>
-<p id="respecRFC2119">The key words  <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, and <em class="rfc2119">SHOULD</em> are 
-  to be interpreted as described in [<cite><a class="bibref" href="#bib-RFC2119">RFC2119</a></cite>].
-</p>
-
+		<section id="conformance" class="normative"><!--OddPage--><h2 id="x2-conformance"><span class="secno">2. </span>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>
+      As well as sections marked as non-normative, all authoring guidelines,
+      diagrams, examples, and notes in this specification are non-normative.
+      Everything else in this specification is normative.
+    </p><p id="respecRFC2119">The key words  <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, and <em class="rfc2119">SHOULD</em> are to be interpreted as described in [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>].</p>
 			<p>This specification indicates whether a section is <a class="termref internalDFN" href="#dfn-normative" data-link-type="dfn">normative</a> or <a class="termref internalDFN" href="#dfn-informative" data-link-type="dfn">informative</a> and the classification applies to the entire section. A statement "This section is normative" or "This section is informative" applies to all sub-sections of that section.</p>
-			<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></strong>, and <strong class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-RFC2119">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format,
+			<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></strong>, and <strong class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format,
 				they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 			<p>Informative sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 		</section>
 		<section id="glossary">
-			<!--OddPage--><h2 id="x3-important-terms"><span class="secno">3. </span>Important Terms&nbsp;<span class="permalink"><a href="#glossary" aria-label="Permalink for 3. Important Terms" title="Permalink for 3. Important Terms"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x3-important-terms"><span class="secno">3. </span>Important Terms<a class="self-link" aria-label="§" href="#glossary"></a></h2>
 			<div data-oninclude="restrictReferences"><p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-MSAA">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-UI-AUTOMATION">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-UIA-EXPRESS">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-AXAPI">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-ATK">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-AT-SPI">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-IAccessible2">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN respec-offending-element" data-lt="object" href="#dfn-object" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN respec-offending-element" data-lt="widget" href="#dfn-widget" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-0">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2">IAccessible2</a></cite>].</p>
     </dd>
     <dt></dt>
     
@@ -874,7 +879,7 @@ var mappingTableLabels = {
     
     <dt><dfn data-lt="event|events" id="dfn-event" data-dfn-type="dfn">Event</dfn></dt>
     <dd>
-      <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
+      <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-1">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
     </dd>
     <dt></dt>
     
@@ -923,7 +928,7 @@ var mappingTableLabels = {
     
     <dt><dfn data-lt="role|roles" id="dfn-role" data-dfn-type="dfn">Role</dfn></dt>
     <dd>
-      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
+      <p>Main indicator of type. <!-- (removing, vague) The object's role is the class of <a class="termref" data-lt="object">objects</a> of which it is a member. --> This <a class="termref internalDFN respec-offending-element" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-2">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
     </dd>
     <dt></dt>
     
@@ -931,7 +936,7 @@ var mappingTableLabels = {
     
     <dt><dfn data-lt="state|states" id="dfn-state" data-dfn-type="dfn">State</dfn></dt>
     <dd>
-      <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
+      <p>A state is a dynamic <a class="termref respec-offending-element" href="#dfn-property" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-3">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured-4">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="http://www.w3.org/TR/wai-aria/states_and_properties#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
     <dt></dt>
     
@@ -957,85 +962,80 @@ var mappingTableLabels = {
 </div>
 		</section>
 		<section class="section" id="keyboard-focus">
-			<!--OddPage--><h2 id="x4-supporting-keyboard-navigation"><span class="secno">4. </span>Supporting Keyboard Navigation&nbsp;<span class="permalink"><a href="#keyboard-focus" aria-label="Permalink for 4. Supporting Keyboard Navigation" title="Permalink for 4. Supporting Keyboard Navigation"><span>§</span></a></span></h2>
-			<p>Enabling keyboard navigation in web applications is a necessary step toward making accessible web applications possible. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#keyboard-focus">Supporting Keyboard Navigation</a> requirements in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+			<!--OddPage--><h2 id="x4-supporting-keyboard-navigation"><span class="secno">4. </span>Supporting Keyboard Navigation<a class="self-link" aria-label="§" href="#keyboard-focus"></a></h2>
+			<p>Enabling keyboard navigation in web applications is a necessary step toward making accessible web applications possible. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#keyboard-focus">Supporting Keyboard Navigation</a> requirements in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping">
-			<!--OddPage--><h2 id="x5-mapping-wai-aria-to-accessibility-apis"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr>&nbsp;<span class="permalink"><a href="#mapping" aria-label="Permalink for 5. Mapping WAI-ARIA to Accessibility APIs" title="Permalink for 5. Mapping WAI-ARIA to Accessibility APIs"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x5-mapping-wai-aria-to-accessibility-apis"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr><a class="self-link" aria-label="§" href="#mapping"></a></h2>
 			<section id="mapping_general">
-				<h3 id="x5-1-general-rules-for-exposing-wai-aria-semantics"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics&nbsp;<span class="permalink"><a href="#mapping_general" aria-label="Permalink for 5.1 General rules for exposing WAI-ARIA semantics" title="Permalink for 5.1 General rules for exposing WAI-ARIA semantics"><span>§</span></a></span></h3>
-				<p>This section <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a> in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+				<h3 id="x5-1-general-rules-for-exposing-wai-aria-semantics"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics<a class="self-link" aria-label="§" href="#mapping_general"></a></h3>
+				<p>This section <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a> in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 			</section>
 		</section>
 		<section id="mapping_conflicts">
-			<!--OddPage--><h2 id="x6-conflicts-between-native-markup-semantics-and-wai-aria"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>&nbsp;<span class="permalink"><a href="#mapping_conflicts" aria-label="Permalink for 6. Conflicts between native markup semantics and WAI-ARIA" title="Permalink for 6. Conflicts between native markup semantics and WAI-ARIA"><span>§</span></a></span></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_conflicts">Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a> in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>]. </p>
+			<!--OddPage--><h2 id="x6-conflicts-between-native-markup-semantics-and-wai-aria"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><a class="self-link" aria-label="§" href="#mapping_conflicts"></a></h2>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_conflicts">Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a> in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>]. </p>
 		</section>
 		<section id="mapping_nodirect">
-			<!--OddPage--><h2 id="x7-exposing-attributes-that-do-not-directly-map-to-accessibility-api-properties"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties&nbsp;<span class="permalink"><a href="#mapping_nodirect" aria-label="Permalink for 7. Exposing attributes that do not directly map to accessibility API properties" title="Permalink for 7. Exposing attributes that do not directly map to accessibility API properties"><span>§</span></a></span></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_nodirect">Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a> in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+			<!--OddPage--><h2 id="x7-exposing-attributes-that-do-not-directly-map-to-accessibility-api-properties"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties<a class="self-link" aria-label="§" href="#mapping_nodirect"></a></h2>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_nodirect">Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a> in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping_role">
-			<!--OddPage--><h2 id="x8-role-mapping"><span class="secno">8. </span>Role mapping&nbsp;<span class="permalink"><a href="#mapping_role" aria-label="Permalink for 8. Role mapping" title="Permalink for 8. Role mapping"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x8-role-mapping"><span class="secno">8. </span>Role mapping<a class="self-link" aria-label="§" href="#mapping_role"></a></h2>
 			<p>Platform <a class="termref internalDFN" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> traditionally have had a finite set of predefined <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a> that are expected by <a class="termref internalDFN" href="#dfn-assistive-technology" data-link-type="dfn">assistive technologies</a> on that platform and only one or two roles may be exposed. In contrast, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> allows multiple roles to be specified as an ordered set of space-separated valid role tokens. The additional roles are fallback roles similar to the concept of specifying multiple fonts in case the first choice font type is not supported.</p>
 			<section id="roleMappingGeneralRules">
-				<h3 id="x8-1-general-rules"><span class="secno">8.1 </span>General Rules&nbsp;<span class="permalink"><a href="#roleMappingGeneralRules" aria-label="Permalink for 8.1 General Rules" title="Permalink for 8.1 General Rules"><span>§</span></a></span></h3>
-				<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the Role Mapping <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#roleMappingGeneralRules">General Rules</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+				<h3 id="x8-1-general-rules"><span class="secno">8.1 </span>General Rules<a class="self-link" aria-label="§" href="#roleMappingGeneralRules"></a></h3>
+				<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the Role Mapping <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#roleMappingGeneralRules">General Rules</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 			</section>
 			<section id="mapping_role_table">
-				<h3 id="x8-2-feature-mapping-table"><span class="secno">8.2 </span>Feature Mapping Table&nbsp;<span class="permalink"><a href="#mapping_role_table" aria-label="Permalink for 8.2 Feature Mapping Table" title="Permalink for 8.2 Feature Mapping Table"><span>§</span></a></span></h3>
-                <div class="ednote"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p></div>
+				<h3 id="x8-2-feature-mapping-table"><span class="secno">8.2 </span>Feature Mapping Table<a class="self-link" aria-label="§" href="#mapping_role_table"></a></h3>
+                <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p></div>
 			</section>
 		</section>
 		<section id="mapping_additional">
-			<!--OddPage--><h2 id="x9-special-processing-requiring-additional-computation"><span class="secno">9. </span>Special Processing Requiring Additional Computation&nbsp;<span class="permalink"><a href="#mapping_additional" aria-label="Permalink for 9. Special Processing Requiring Additional Computation" title="Permalink for 9. Special Processing Requiring Additional Computation"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x9-special-processing-requiring-additional-computation"><span class="secno">9. </span>Special Processing Requiring Additional Computation<a class="self-link" aria-label="§" href="#mapping_additional"></a></h2>
 			<section id="mapping_additional_nd">
-				<h3 id="x9-1-generated-content"><span class="secno">9.1 </span>Generated Content&nbsp;<span class="permalink"><a href="#mapping_additional_nd" aria-label="Permalink for 9.1 Generated Content" title="Permalink for 9.1 Generated Content"><span>§</span></a></span></h3>
+				<h3 id="x9-1-generated-content"><span class="secno">9.1 </span>Generated Content<a class="self-link" aria-label="§" href="#mapping_additional_nd"></a></h3>
 			</section>
 		</section>
 		<section id="mapping_actions">
-			<!--OddPage--><h2 id="x10-actions"><span class="secno">10. </span>Actions&nbsp;<span class="permalink"><a href="#mapping_actions" aria-label="Permalink for 10. Actions" title="Permalink for 10. Actions"><span>§</span></a></span></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_actions" class="core-mapping">Actions</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+			<!--OddPage--><h2 id="x10-actions"><span class="secno">10. </span>Actions<a class="self-link" aria-label="§" href="#mapping_actions"></a></h2>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_actions" class="core-mapping">Actions</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping_events">
-			<!--OddPage--><h2 id="x11-events"><span class="secno">11. </span>Events&nbsp;<span class="permalink"><a href="#mapping_events" aria-label="Permalink for 11. Events" title="Permalink for 11. Events"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="x11-events"><span class="secno">11. </span>Events<a class="self-link" aria-label="§" href="#mapping_events"></a></h2>
 			<p><a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> fire <a class="termref internalDFN" href="#dfn-event" data-link-type="dfn">events</a> for user actions, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>
-				<a class="termref internalDFN" href="#dfn-state" data-link-type="dfn">state</a> changes, changes to document content or node visibility, changes in selection, and operation of menus. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> support the [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>] <a class="core=mappings" href="#mapping_events">Events</a> mappings.</p>
+				<a class="termref internalDFN" href="#dfn-state" data-link-type="dfn">state</a> changes, changes to document content or node visibility, changes in selection, and operation of menus. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> support the [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>] <a class="core=mappings" href="#mapping_events">Events</a> mappings.</p>
 		</section>
 		<section id="document-handling">
-			<!--OddPage--><h2 id="x12-special-document-handling-procedures"><span class="secno">12. </span>Special Document Handling Procedures&nbsp;<span class="permalink"><a href="#document-handling" aria-label="Permalink for 12. Special Document Handling Procedures" title="Permalink for 12. Special Document Handling Procedures"><span>§</span></a></span></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#document-handling" class="core-mapping">Special Document Handling Procedures</a> in [<cite><a class="bibref" href="#bib-CORE-AAM">CORE-AAM</a></cite>].</p>
+			<!--OddPage--><h2 id="x12-special-document-handling-procedures"><span class="secno">12. </span>Special Document Handling Procedures<a class="self-link" aria-label="§" href="#document-handling"></a></h2>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#document-handling" class="core-mapping">Special Document Handling Procedures</a> in [<cite><a class="bibref" href="#bib-core-aam">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="appendices" class="appendix">
-			<!--OddPage--><h2 id="a-appendices"><span class="secno">A. </span>Appendices&nbsp;<span class="permalink"><a href="#appendices" aria-label="Permalink for A. Appendices" title="Permalink for A. Appendices"><span>§</span></a></span></h2>
+			<!--OddPage--><h2 id="a-appendices"><span class="secno">A. </span>Appendices<a class="self-link" aria-label="§" href="#appendices"></a></h2>
         		<section class="appendix" id="changelog">
-                		<h3 id="a-1-change-log"><span class="secno">A.1 </span>Change Log&nbsp;<span class="permalink"><a href="#changelog" aria-label="Permalink for A.1 Change Log" title="Permalink for A.1 Change Log"><span>§</span></a></span></h3>
+                		<h3 id="a-1-change-log"><span class="secno">A.1 </span>Change Log<a class="self-link" aria-label="§" href="#changelog"></a></h3>
                 	</section>
 			<section class="appendix informative section" id="acknowledgements">
-				<h3 id="a-2-acknowledgments"><span class="secno">A.2 </span>Acknowledgments&nbsp;<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for A.2 Acknowledgments" title="Permalink for A.2 Acknowledgments"><span>§</span></a></span></h3><p><em>This section is non-normative.</em></p>
+				<h3 id="a-2-acknowledgments"><span class="secno">A.2 </span>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h3><p><em>This section is non-normative.</em></p>
 				<p>The following people contributed to the development of this document.</p>
 				<section id="ack_participants">
-					<h4 id="a-2-1-participants-of-the-apa-aria-and-css-working-groups-who-contributed-to-this-document"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document&nbsp;<span class="permalink"><a href="#ack_participants" aria-label="Permalink for A.2.1 Participants of the APA, ARIA, and CSS Working Groups who contributed to this document" title="Permalink for A.2.1 Participants of the APA, ARIA, and CSS Working Groups who contributed to this document"><span>§</span></a></span></h4>
+					<h4 id="a-2-1-participants-of-the-apa-aria-and-css-working-groups-who-contributed-to-this-document"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document<a class="self-link" aria-label="§" href="#ack_participants"></a></h4>
 					<p>TBD</p>
 				</section>
 				<section class="section" id="ack_funders">
-					<h4 id="a-2-2-enabling-funders"><span class="secno">A.2.2 </span>Enabling funders&nbsp;<span class="permalink"><a href="#ack_funders" aria-label="Permalink for A.2.2 Enabling funders" title="Permalink for A.2.2 Enabling funders"><span>§</span></a></span></h4>
+					<h4 id="a-2-2-enabling-funders"><span class="secno">A.2.2 </span>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h4>
 					<p>This publication has been funded in part with Federal funds from the U.S. Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number ED-OSE-10-C-0067. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 				</section>
 			</section>
 		</section>
 	
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="b-references"><span class="secno">B. </span>References&nbsp;<span class="permalink"><a href="#references" aria-label="Permalink for B. References" title="Permalink for B. References"><span>§</span></a></span></h2><section id="normative-references"><h3 id="b-1-normative-references"><span class="secno">B.1 </span>Normative references&nbsp;<span class="permalink"><a href="#normative-references" aria-label="Permalink for B.1 Normative references" title="Permalink for B.1 Normative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-CORE-AAM">[CORE-AAM]</dt><dd><a href="http://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joseph Scheuhammer; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/core-aam-1.1/">http://www.w3.org/TR/core-aam-1.1/</a>
-</dd><dt id="bib-css-2015">[css-2015]</dt><dd><a href="https://www.w3.org/TR/css-2015/"><cite>CSS Snapshot 2015</cite></a>. Tab Atkins Jr.; Elika Etemad; Florian Rivoal. W3C. 13 October 2015. W3C Note. URL: <a href="https://www.w3.org/TR/css-2015/">https://www.w3.org/TR/css-2015/</a>
-</dd><dt id="bib-RFC2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
-</dd></dl></section><section id="informative-references"><h3 id="b-2-informative-references"><span class="secno">B.2 </span>Informative references&nbsp;<span class="permalink"><a href="#informative-references" aria-label="Permalink for B.2 Informative references" title="Permalink for B.2 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-AT-SPI">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a>
-</dd><dt id="bib-ATK">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a>
-</dd><dt id="bib-AXAPI">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a>
-</dd><dt id="bib-IAccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a>
-</dd><dt id="bib-MSAA">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a>
-</dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a>
-</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
-</dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="b-references"><span class="secno">B. </span>References<a class="self-link" aria-label="§" href="#references"></a></h2>
+      
+    <section id="normative-references">
+        <h3 id="b-1-normative-references"><span class="secno">B.1 </span>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+      <dl class="bibliography">
+        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078"><cite>Accessibility Programming Guide for OS X</cite></a>.  Apple Corporation. URL: <a href="https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078">https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/index.html#//apple_ref/doc/uid/TP40001078</a></dd><dt id="bib-core-aam">[CORE-AAM]</dt><dd><a href="http://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joseph Scheuhammer; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/core-aam-1.1/">http://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-css-2015">[css-2015]</dt><dd><a href="https://www.w3.org/TR/css-2015/"><cite>CSS Snapshot 2015</cite></a>. Tab Atkins Jr.; Elika Etemad; Florian Rivoal. W3C. 13 October 2015. W3C Note. URL: <a href="https://www.w3.org/TR/css-2015/">https://www.w3.org/TR/css-2015/</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-implementation">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a></dd><dt id="bib-wcag20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
