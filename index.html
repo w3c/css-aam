@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 23.8.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.2.3"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -14,8 +14,8 @@ div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
-.issue, .note, .ednote, .warning {
+.warning > p:first-child { margin-top: 0 }
+.warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
@@ -26,7 +26,7 @@ div.issue, div.note , div.ednote,  div.warning {
     position: relative;
     clear: both;
 }
-span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+span.warning { padding: .1em .5em .15em; }
 
 .issue {
     border-color: #e05252;
@@ -34,11 +34,6 @@ span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
 }
 .issue.closed span.issue-number {
     text-decoration: line-through;
-}
-
-.note, .ednote {
-    border-color: #52e052;
-    background: #e9fbe9;
 }
 
 .warning {
@@ -92,7 +87,6 @@ input.task-list-item-checkbox {
 		<title>CSS Accessibility API Mappings</title>
 		
 		<script src="https://www.w3.org/scripts/jquery/1.11/jquery.min.js"></script>
-		
 		<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -334,6 +328,7 @@ h6>a.self-link::before {
   }
 }
 </style>
+		
 		
 		
 		<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
@@ -688,21 +683,21 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-12-21",
-  "publishISODate": "2018-12-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 December 2018"
+  "publishDate": "2019-01-24",
+  "publishISODate": "2019-01-24T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 24 January 2019"
 }</script><meta name="description" content="The CSS Accessibility API Mappings (CSS-AAM) defines how
     user agents map
     the Cascading Stylesheets [css-2015] features
     to platform accessibility APIs.
     It is intended for user agent developers
     responsible for accessibility in their user agent so that they can support the accessibility of content that uses CSS."></head>
-	<body class="h-entry toc-inline"><div class="head">
+	<body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2018-12-21">21 December 2018</time>
+        <time class="dt-published" datetime="2019-01-24">24 January 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -727,24 +722,20 @@ var mappingTableLabels = {
       
       
       <p class="copyright">
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-                        ©
-                        2016-2018
-                        
-                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
-                        
-                        <abbr title="World Wide Web Consortium">W3C</abbr>
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
-                        and
-                        <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
-                        rules apply.
-                      </p>
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+      ©
+      2016-2019
+      
+      <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+      <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
+      apply.
+    </p>
       <hr title="Separator for header">
     </div>
-		<section id="abstract" class="introductory"><!--OddPage--><h2>Abstract</h2>
+		<section id="abstract" class="introductory"><h2>Abstract</h2>
   <p>
     The CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings (CSS-AAM) defines how
     <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> map
@@ -760,60 +751,50 @@ var mappingTableLabels = {
   </p>
 
 		</section>
-		<section id="sotd" class="introductory"><!--OddPage--><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
+		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
 			<p>This is a stub document intended to collect features where CSS accessibility can be enhanced by providing user agent accessibility guidance.</p>
 		<p>
-                                              This document was published by
-                                              the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a>, the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a>, and the <a href="https://www.w3.org/Style/CSS/">CSS Working Group</a> as an
-                                              Editor's Draft.
-                                              
-                                            </p><p>
-                                                      
-                                                      Comments regarding this document are welcome.
-                                                              Please send them
-                                                              to
-                                                              <a href="mailto:public-css-a11y@w3.org">public-css-a11y@w3.org</a>
-                                                              (<a href="https://lists.w3.org/Archives/Public/public-css-a11y/">archives</a>).
-                                                            
-                                                    </p><p>
-                                              Publication as an
-                                              Editor's Draft does not imply
-                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
-                                              This is a draft document and may
-                                              be updated, replaced or obsoleted
-                                              by other documents at any time. It
-                                              is inappropriate to cite this
-                                              document as other than work in
-                                              progress.
-                                            </p><p>
-                                      
-                                              This document was produced by
-                                              groups
-                                              operating under the
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-                                            
-                                      
-                                      
-                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains
-                                                      a <a href="http://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a>, a <a href="https://www.w3.org/2004/01/pp-impl/83907/status" rel="disclosure">public list of any patent disclosures  (Accessible Platform Architectures Working Group)</a>, and a <a href="https://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures  (CSS Working Group)</a>
-                                              made in connection with the
-                                              deliverables of
-                                              each group; these pages also include
-                                              instructions for disclosing a
-                                              patent. An individual who has
-                                              actual knowledge of a patent which
-                                              the individual believes contains
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
-                                              must disclose the information in
-                                              accordance with
-                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-                                                Policy</a>.
-                                            
-                                      
-                                    </p><p>
-                                      This document is governed by the
-                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#glossary"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#keyboard-focus"><span class="secno">4. </span>Supporting Keyboard Navigation</a></li><li class="tocline"><a class="tocxref" href="#mapping"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><span class="secno">8. </span>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><span class="secno">8.1 </span>General Rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><span class="secno">8.2 </span>Feature Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><span class="secno">9. </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><span class="secno">9.1 </span>Generated Content</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><span class="secno">10. </span>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><span class="secno">11. </span>Events</a></li><li class="tocline"><a class="tocxref" href="#document-handling"><span class="secno">12. </span>Special Document Handling Procedures</a></li><li class="tocline"><a class="tocxref" href="#appendices"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A.1 </span>Change Log</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A.2 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_participants"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.2.2 </span>Enabling funders</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">B.1 </span>Normative references</a></li></ol></li></ol></nav>
+                              This document was published by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a>, the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a>, and the <a href="https://www.w3.org/Style/CSS/">CSS Working Group</a> as
+                              an Editor's Draft.
+                              
+                            </p><p>
+      
+      Comments regarding this document are welcome.
+              Please send them to
+              <a href="mailto:public-css-a11y@w3.org">public-css-a11y@w3.org</a>
+              (<a href="https://lists.w3.org/Archives/Public/public-css-a11y/">archives</a>).
+            
+    </p><p>
+                              Publication as an Editor's Draft
+                              does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                              This is a draft document and may be updated,
+                              replaced or obsoleted by other documents at any
+                              time. It is inappropriate to cite this document as
+                              other than work in progress.
+                            </p><p>
+                      
+                              This document was produced by
+                              groups
+                              operating under the
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                      
+                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/83726/status" rel="disclosure">public list of any patent disclosures  (Accessible Rich Internet Applications Working Group)</a>, a <a href="https://www.w3.org/2004/01/pp-impl/83907/status" rel="disclosure">public list of any patent disclosures  (Accessible Platform Architectures Working Group)</a>, and a <a href="https://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures  (CSS Working Group)</a>
+                              made in connection with the deliverables of
+                              each group; these pages also include
+                              instructions for disclosing a patent. An
+                              individual who has actual knowledge of a patent
+                              which the individual believes contains
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                              must disclose the information in accordance with
+                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                            
+                      
+                    </p><p>
+                      This document is governed by the
+                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                    </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#glossary"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#keyboard-focus"><span class="secno">4. </span>Supporting Keyboard Navigation</a></li><li class="tocline"><a class="tocxref" href="#mapping"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><span class="secno">6. </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><span class="secno">7. </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><span class="secno">8. </span>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><span class="secno">8.1 </span>General Rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><span class="secno">8.2 </span>Feature Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><span class="secno">9. </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><span class="secno">9.1 </span>Generated Content</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><span class="secno">10. </span>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><span class="secno">11. </span>Events</a></li><li class="tocline"><a class="tocxref" href="#document-handling"><span class="secno">12. </span>Special Document Handling Procedures</a></li><li class="tocline"><a class="tocxref" href="#appendices"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A.1 </span>Change Log</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">A.2 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_participants"><span class="secno">A.2.1 </span>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><span class="secno">A.2.2 </span>Enabling funders</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">B.1 </span>Normative references</a></li></ol></li></ol></nav>
 		<section id="intro" class="informative">
 			<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#intro"></a></h2><p><em>This section is non-normative.</em></p>
 		</section>
@@ -989,7 +970,7 @@ var mappingTableLabels = {
 			</section>
 			<section id="mapping_role_table">
 				<h3 id="x8-2-feature-mapping-table"><span class="secno">8.2 </span>Feature Mapping Table<a class="self-link" aria-label="§" href="#mapping_role_table"></a></h3>
-                <div class="ednote" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p></div>
+                <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p></div>
 			</section>
 		</section>
 		<section id="mapping_additional">
