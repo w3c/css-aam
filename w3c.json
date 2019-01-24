@@ -10,5 +10,6 @@
       "w3c": "clilley"
     }
   ],
-  "policy": "restricted" 
+  "policy": "restricted",
+  "repo-type": "rec-track"
 }
