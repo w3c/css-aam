@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.21.7"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.23.6"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -388,7 +388,6 @@ var mappingTableLabels = {
 	<link rel="canonical" href="https://www.w3.org/TR/css-aam-1.0/"><style>var {
   position: relative;
   cursor: pointer;
-  display: inline-block;
 }
 
 var[data-type]::before,
@@ -423,6 +422,8 @@ var[data-type]::after {
   padding: 6px;
   border-radius: 3px;
   color: #daca88;
+  text-indent: 0;
+  font-weight: normal;
 }
 
 var[data-type]:hover::after,
@@ -523,9 +524,9 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-05-22",
-  "publishISODate": "2019-05-22T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 22 May 2019"
+  "publishDate": "2019-06-28",
+  "publishISODate": "2019-06-28T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 28 June 2019"
 }</script><meta name="description" content="The CSS Accessibility API Mappings (CSS-AAM) defines how
     user agents map
     the Cascading Stylesheets [css-2015] features
@@ -537,7 +538,7 @@ var[data-type]:hover::before {
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-05-22">22 May 2019</time>
+        <time class="dt-published" datetime="2019-06-28">28 June 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -579,7 +580,7 @@ var[data-type]:hover::before {
   <p>
     The CSS Accessibility <abbr title="application programming interface">API</abbr> Mappings (CSS-AAM) defines how
     <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> map
-    the Cascading Stylesheets [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!css-2015]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-css-2015"><a class="bibref" href="#bib-css-2015" title="CSS Snapshot 2015">css-2015</a></cite>] features
+    the Cascading Stylesheets [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!css-2015]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-css-2015"><a class="bibref" href="#bib-css-2015" title="CSS Snapshot 2015" data-link-type="biblio">css-2015</a></cite>] features
     to platform <a class="termref internalDFN" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>.
     It is intended for user agent developers
     responsible for accessibility in their user agent so that they can support the accessibility of content that uses CSS.
@@ -641,12 +642,12 @@ var[data-type]:hover::before {
             The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, and <em class="rfc2119">SHOULD</em> in this document
             are to be interpreted as described in
             <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
-            [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>]
-            [<cite><a class="bibref" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>] when, and only when, they appear
+            [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels" data-link-type="biblio">RFC2119</a></cite>]
+            [<cite><a class="bibref" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words" data-link-type="biblio">RFC8174</a></cite>] when, and only when, they appear
             in all capitals, as shown here.
           </p>
 			<p>This specification indicates whether a section is <a class="termref internalDFN" href="#dfn-normative" data-link-type="dfn">normative</a> or <a class="termref internalDFN" href="#dfn-informative" data-link-type="dfn">informative</a> and the classification applies to the entire section. A statement "This section is normative" or "This section is informative" applies to all sub-sections of that section.</p>
-			<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></strong>, and <strong class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format,
+			<p>Normative sections provide requirements that <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> must follow for an implementation to conform to this specification. The keywords <strong class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MUST NOT">MUST NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="REQUIRED">REQUIRED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL">SHALL</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHALL NOT">SHALL NOT</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em></strong>, <strong class="rfc2119"><em class="rfc2119" title="MAY">MAY</em></strong>, and <strong class="rfc2119"><em class="rfc2119" title="OPTIONAL">OPTIONAL</em></strong> in this document are to be interpreted as described in <cite><a href="http://www.rfc-editor.org/rfc/rfc2119.txt">Keywords for use in RFCs to indicate requirement levels</a></cite> [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels" data-link-type="biblio">RFC2119</a></cite>]. RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format,
 				they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
 			<p>Informative sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow such recommendations in order to conform to this specification.</p>
 		</section>
@@ -656,8 +657,8 @@ var[data-type]:hover::before {
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0" data-link-type="biblio">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation" data-link-type="biblio">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface" data-link-type="biblio">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS" data-link-type="biblio">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit" data-link-type="biblio">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface" data-link-type="biblio">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>].</p>
     </dd>
     
     
@@ -794,29 +795,29 @@ var[data-type]:hover::before {
 		</section>
 		<section class="section" id="keyboard-focus">
 			<h2 id="x4-supporting-keyboard-navigation"><bdi class="secno">4. </bdi>Supporting Keyboard Navigation<a class="self-link" aria-label="§" href="#keyboard-focus"></a></h2>
-			<p>Enabling keyboard navigation in web applications is a necessary step toward making accessible web applications possible. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#keyboard-focus">Supporting Keyboard Navigation</a> requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+			<p>Enabling keyboard navigation in web applications is a necessary step toward making accessible web applications possible. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#keyboard-focus">Supporting Keyboard Navigation</a> requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping">
 			<h2 id="x5-mapping-wai-aria-to-accessibility-apis"><bdi class="secno">5. </bdi>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr><a class="self-link" aria-label="§" href="#mapping"></a></h2>
 			<section id="mapping_general">
 				<h3 id="x5-1-general-rules-for-exposing-wai-aria-semantics"><bdi class="secno">5.1 </bdi>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics<a class="self-link" aria-label="§" href="#mapping_general"></a></h3>
-				<p>This section <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+				<p>This section <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 			</section>
 		</section>
 		<section id="mapping_conflicts">
 			<h2 id="x6-conflicts-between-native-markup-semantics-and-wai-aria"><bdi class="secno">6. </bdi>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr><a class="self-link" aria-label="§" href="#mapping_conflicts"></a></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_conflicts">Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>]. </p>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_conflicts">Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>]. </p>
 		</section>
 		<section id="mapping_nodirect">
 			<h2 id="x7-exposing-attributes-that-do-not-directly-map-to-accessibility-api-properties"><bdi class="secno">7. </bdi>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties<a class="self-link" aria-label="§" href="#mapping_nodirect"></a></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_nodirect">Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_nodirect">Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping_role">
 			<h2 id="x8-role-mapping"><bdi class="secno">8. </bdi>Role mapping<a class="self-link" aria-label="§" href="#mapping_role"></a></h2>
 			<p>Platform <a class="termref internalDFN" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> traditionally have had a finite set of predefined <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a> that are expected by <a class="termref internalDFN" href="#dfn-assistive-technology" data-link-type="dfn">assistive technologies</a> on that platform and only one or two roles may be exposed. In contrast, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> allows multiple roles to be specified as an ordered set of space-separated valid role tokens. The additional roles are fallback roles similar to the concept of specifying multiple fonts in case the first choice font type is not supported.</p>
 			<section id="roleMappingGeneralRules">
 				<h3 id="x8-1-general-rules"><bdi class="secno">8.1 </bdi>General Rules<a class="self-link" aria-label="§" href="#roleMappingGeneralRules"></a></h3>
-				<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the Role Mapping <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#roleMappingGeneralRules">General Rules</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+				<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the Role Mapping <a class="core-mapping" href="http://w3c.github.io/aria/core-aam/core-aam.html#roleMappingGeneralRules">General Rules</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 			</section>
 			<section id="mapping_role_table">
 				<h3 id="x8-2-feature-mapping-table"><bdi class="secno">8.2 </bdi>Feature Mapping Table<a class="self-link" aria-label="§" href="#mapping_role_table"></a></h3>
@@ -831,16 +832,16 @@ var[data-type]:hover::before {
 		</section>
 		<section id="mapping_actions">
 			<h2 id="x10-actions"><bdi class="secno">10. </bdi>Actions<a class="self-link" aria-label="§" href="#mapping_actions"></a></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_actions" class="core-mapping">Actions</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#mapping_actions" class="core-mapping">Actions</a> accessibility <abbr title="application programming interface">API</abbr> computational requirements in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="mapping_events">
 			<h2 id="x11-events"><bdi class="secno">11. </bdi>Events<a class="self-link" aria-label="§" href="#mapping_events"></a></h2>
 			<p><a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> fire <a class="termref internalDFN" href="#dfn-event" data-link-type="dfn">events</a> for user actions, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>
-				<a class="termref internalDFN" href="#dfn-state" data-link-type="dfn">state</a> changes, changes to document content or node visibility, changes in selection, and operation of menus. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> support the [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>] <a class="core=mappings" href="#mapping_events">Events</a> mappings.</p>
+				<a class="termref internalDFN" href="#dfn-state" data-link-type="dfn">state</a> changes, changes to document content or node visibility, changes in selection, and operation of menus. Conforming <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> support the [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>] <a class="core=mappings" href="#mapping_events">Events</a> mappings.</p>
 		</section>
 		<section id="document-handling">
 			<h2 id="x12-special-document-handling-procedures"><bdi class="secno">12. </bdi>Special Document Handling Procedures<a class="self-link" aria-label="§" href="#document-handling"></a></h2>
-			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#document-handling" class="core-mapping">Special Document Handling Procedures</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM</a></cite>].</p>
+			<p>User agents <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> conform to the <a href="http://w3c.github.io/aria/core-aam/core-aam.html#document-handling" class="core-mapping">Special Document Handling Procedures</a> in [<cite><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM</a></cite>].</p>
 		</section>
 		<section id="appendices" class="appendix">
 			<h2 id="a-appendices"><bdi class="secno">A. </bdi>Appendices<a class="self-link" aria-label="§" href="#appendices"></a></h2>
