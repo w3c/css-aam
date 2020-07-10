@@ -13,14 +13,13 @@
 		<!--<link href="css/dpub-aam.css" rel="stylesheet" type="text/css"/>-->
 		<script class="remove">
   var respecConfig = {
-    includePermalinks: true,
-    
+	github: "w3c/css-aam",
+	doJsonLd: true,
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
     specStatus:           "ED",
     //crEnd:                "2012-04-30",
     //perEnd:               "2013-07-23",
     //publishDate:           "2013-08-22",
-    diffTool:             "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
 
     // the specifications short name, as in http://www.w3.org/TR/short-name/
     shortName:            "css-aam-1.0",
@@ -227,14 +226,9 @@ var mappingTableLabels = {
 			<section class="appendix informative section" id="acknowledgements">
 				<h3>Acknowledgments</h3>
 				<p>The following people contributed to the development of this document.</p>
-				<section id="ack_participants">
-					<h4>Participants of the APA, ARIA, and CSS Working Groups who contributed to this document</h4>
-					<p>TBD</p>
-				</section>
-				<section class="section" id="ack_funders">
-					<h4>Enabling funders</h4>
-					<p>This publication has been funded in part with Federal funds from the U.S. Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR) under contract number ED-OSE-10-C-0067. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
-				</section>
+				<div data-include="common/acknowledgements/aria-wg-active.html" data-include-replace="true"></div>
+				<div data-include="common/acknowledgements/aria-contributors.html" data-include-replace="true"></div>
+				<div data-include="common/acknowledgements/funders.html" data-include-replace="true"></div>
 			</section>
 		</section>
 	</body>
