@@ -20,8 +20,9 @@ script:
   - cd gh-pages
   - git clone --depth=1 --branch=gh-pages https://github.com/w3c/css-aam.git
   - cd css-aam
+  - rm -rf common img  
+  - cp -R ../../css-aam/common ../../css-aam/img .
   - curl https://labs.w3.org/spec-generator/?type=respec"&"url=https://raw.githack.com/w3c/css-aam/main/index.html -o index.html -f --retry 3
-  - cp -R ../../w3c/css-aam/common .
 
 after_success:
   - git add -A .
