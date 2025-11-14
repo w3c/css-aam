@@ -4,12 +4,9 @@
     {
       "github": "michael-n-cooper",
       "w3c": "cooper"
-    },
-    {
-      "github": "svgeesus",
-      "w3c": "clilley"
     }
   ],
   "policy": "restricted",
+  "shortName": "css-aam-1.0",
   "repo-type": "rec-track"
 }
