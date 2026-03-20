@@ -1,4 +1,4 @@
-# Specification 'css-aam'
+# CSS-AAM Specification 
 
 This is the issue tracking repository for CSS Accessibility API Mappings (css-aam). You can read the [Editor's Draft version of the specification here](https://w3c.github.io/css-aam/).
 
