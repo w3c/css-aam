@@ -1,15 +1,7 @@
 {
-  "group": 94039,
-  "contacts": [
-    {
-      "github": "michael-n-cooper",
-      "w3c": "cooper"
-    },
-    {
-      "github": "svgeesus",
-      "w3c": "clilley"
-    }
-  ],
+  "group": "wg/aria",
+  "contacts": ["daniel-montalvo"],
   "policy": "restricted",
+  "shortName": "css-aam-1.0",
   "repo-type": "rec-track"
 }
