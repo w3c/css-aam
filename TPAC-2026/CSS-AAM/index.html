@@ -77,6 +77,7 @@
      <li class="next"><code>display</code> as first property</li>
      <li class="next"><code>visibility</code> as second property</li>
      <li class="next">Something more recent after that</li>
+     <li class="next">WPT tests written</li>
      <li class="next">Roadtest CSS-AAM as for building consensus</li>
     </ul>
     <img src="CSS-AAM/spec.jpg" class="side" alt="the CSS-AAM spec document">
@@ -95,23 +96,12 @@
    <h1>Editing and process</h1>
   </section>
   
-  <section class="slide">
-   <h2>Editing and process</h2>
-   <ol>
-     <li>Editing
-       <ol>
-         <li>Explicitly state there’s no impact</li>
-         <li>Deviating from other AAMs</li>
-       </ol>
-     </li>
-     <li class="next">Process
-       <ol>
-         <li>Who should review our PRs?</li>
-         <li>What are the requirements for landing things?</li>
-         <li>How do we merge WPT PRs?</li>
-       </ol>
-     </li>
-   </ol>
+  <section class="comment">
+    <p>Next up is editing and process.</p>
+  </section>
+  
+  <section class="comment">
+    <p></p>
   </section>
   
   <section class="slide">
@@ -133,6 +123,7 @@
   </section>
   
   <section class=comment>
+    <p>Let’s start with editing.</p>
    <ul>
      <li>There are a lot of cases in CSS-AAM where we need to explicitly state that some property has no impact on the accessibility tree, but where authors might incorrectly intuit that there will be some impact.</li>
     <li>display: contents is a great example. We need to explicitly state that the element should be included in the accessibility tree because it is the entire point of that property; exceptions apply. So "not mapped" seems understated/insufficient.</li>
@@ -157,12 +148,18 @@
            <li>ARIA WG Process Document requires two implementations</li>
          </ul>
        </li>
-       <li class="next">How do we merge WPT PRs?</li>
+       <li class="next">Web Platform Tests (WPT)
+         <ul>
+           <li>How many situations do we test?</li>
+           <li>How do we get PRs merged?</li>
+         </ul>
+       </li>
      </ol>
   </section>
   
   <section class="comment">
       <p>For example, the ARIA process requires two implementations. Initially, most of these things should hopefully already be implemented in browsers. We're just writing down what is currently unwritten. So does that mean we can just merge it once reviewed?</p>
+      <p>For <code>display</code> we’re testing some 74 different situations/elements.</p>
   </section>
   
   <section class="slide part">
