@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "@import": "https://www.w3.org/Talks/Tools/b6plus-editor/b6plus.jsonld",
+    "@language": "en-us"
+  },
+
+  "@id": "slides.css",
+  "documentation": "Overview.html",
+  "supports-clear": true,
+  "layouts": [
+    { "name": "Normal slide",
+      "class": ""
+    },
+    { "name": "Cover slide",
+      "class": "cover"
+    },
+    { "name": "Part title",
+      "class": "part"
+    },
+    { "name": "Slide with left image",
+      "class": "side"
+    },
+    { "name": "Slide with big left image",
+      "class": "side big"
+    },
+    { "name": "Slide with right image",
+      "class": ["side right", "side r"]
+    },
+    { "name": "Slide with big right image",
+      "class": ["side right big", "side r big"]
+    },
+    { "name": "Slide with 2 panes",
+      "class": "two-panes"
+    },
+    { "name": "Final slide",
+      "class": "final"
+    }
+  ],
+  "transitions": [
+    { "name": "Default",
+      "class":""
+    },
+    { "name": "Fade In",
+      "class": "fade-in"
+    },
+    { "name": "Slide In",
+      "class": "slide-in"
+    },
+    { "name": "Slide Out",
+      "class": "slide-out"
+    },
+    { "name": "Move Left",
+      "class": "move-left"
+    },
+    { "name": "Slide Up",
+      "class": "slide-up"
+    },
+    { "name": "Move Up",
+      "class": "move-up"
+    },
+    { "name": "Flip Up",
+      "class": "flip-up"
+    },
+    { "name": "Flip Left",
+      "class": "flip-left"
+    },
+    { "name": "Center Out",
+      "class": "center-out"
+    },
+    { "name": "Wipe Left",
+      "class": "wipe-left"
+    },
+    { "name": "Zigzag Left",
+      "class": "zigzag-left"
+    },
+    { "name": "Zigzag Right",
+      "class": "zigzag-right"
+    },
+    { "name": "Cut In",
+      "class": "cut-in"
+    },
+    { "name": "Assemble",
+      "class": "assemble"
+    }
+  ]
+}
