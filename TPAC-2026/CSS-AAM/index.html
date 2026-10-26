@@ -45,7 +45,7 @@
   </section>
 
   <section class=comment>
-   <p>Notes for slide 1 can be put here.</p>
+   <p>Thank you all for joining us for CSS-AAM!</p>
   </section>
 
 
@@ -59,19 +59,16 @@
   </section>
 
   <section class=comment>
-   <p>Notes for slide 2 can be put here.</p>
+   <p>Here’s our agenda for today. Most of our time will be spent on the editing and process topic.</p>
   </section>
-  
-  
   
   <section class="slide part">
    <h1>State of the spec</h1>
   </section>
   
   <section class=comment>
-   <p>Notes.</p>
+   <p>But first the state of the spec, what have we done so far?.</p>
   </section>
-
 
   <section class="slide side right">
    <h2>State of the spec</h2>
@@ -117,8 +114,55 @@
    </ol>
   </section>
   
+  <section class="slide">
+    <h2>Editing</h2>
+    <ol>
+       <li>Explicitly state there’s no impact
+         <ul>
+           <li><code>display: contents</code></li>
+         </ul>
+       </li>
+       <li class="next">Deviating from other AAMs
+         <ol>
+           <li>Do we just say “not mapped”?</li>
+           <li>How much can we deviate?</li>
+           <li>Can we have longer form prose?</li>
+         </ol>
+       </li>
+     </ol>
+  </section>
+  
   <section class=comment>
-   <p>Notes.</p>
+   <ul>
+     <li>There are a lot of cases in CSS-AAM where we need to explicitly state that some property has no impact on the accessibility tree, but where authors might incorrectly intuit that there will be some impact.</li>
+    <li>display: contents is a great example. We need to explicitly state that the element should be included in the accessibility tree because it is the entire point of that property; exceptions apply. So "not mapped" seems understated/insufficient.</li>
+    <li>Current AAM spec language doesn't seem to really allow for that.
+       Do we just say "not mapped" and use comments to make this clear? Or is there some other terminology we can use?</li>
+    <li>CSS-AAM is quite different to the other AAMs in that it doesn't just map to roles and states. It can also create accessibility nodes from pseudo-elements, impact text attributes, etc.</li>
+    <li>How much latitude do we have to completely deviate from the other AAMs? Is it reasonable to just have longer form prose in some sections?</li>
+   </ul>
+  </section>
+  
+  <section class="slide">
+    <h2>Process</h2>
+    <ol>
+       <li>Who should review our PRs?
+         <ul>
+           <li>Browser vendors?</li>
+           <li>Editors?</li>
+         </ul>
+       </li>
+       <li class="next">What are the requirements for landing things?
+         <ul>
+           <li>ARIA WG Process Document requires two implementations</li>
+         </ul>
+       </li>
+       <li class="next">How do we merge WPT PRs?</li>
+     </ol>
+  </section>
+  
+  <section class="comment">
+      <p>For example, the ARIA process requires two implementations. Initially, most of these things should hopefully already be implemented in browsers. We're just writing down what is currently unwritten. So does that mean we can just merge it once reviewed?</p>
   </section>
   
   <section class="slide part">
